@@ -21,6 +21,18 @@ async function fetchContentful(fetchUrl) {
     return responseData;
 }
 
+export async function fetchAllPlaces(){
+    const fetchUrl = `http://localhost:8080/places`
+    return fetchContentful(fetchUrl);
+}
+
+export async function fetchPlaceById(placeId){
+    const fetchUrl = `http://localhost:8080/places/${placeId}`
+    return fetchContentful(fetchUrl);
+}
+
+
+
 export async function fetchEntry(requestEntry){
     const entry = requestEntry
     const selectors = "sys.id,sys.createdAt,fields"
